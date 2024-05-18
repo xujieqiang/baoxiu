@@ -1,0 +1,157 @@
+{{ define "front/index.html" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多媒体报修</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+          <h1 class="title">
+            古中多媒体报修平台
+          </h1>
+          <p class="subtitle"  style="padding-top: 20px;">
+            今天是： <strong>{{.wel}}</strong>
+          </p>
+          
+        </div>
+      </section>
+    <div class="container" >
+        <nav class="level is-mobile">
+            <p class="level-item has-text-centered">
+              <a class="link is-info" href="/">首页</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info" href="/baoxiu">报修</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <img src="/static/pic/log.png" alt="" style="height: 30px;">
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info">已修好</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info">无法修复的</a>
+            </p>
+          </nav>
+    </div>
+    
+   
+
+    
+      <div class="container"  style="padding-top: 20px;padding-bottom: 15px;">
+          <article class="message">
+            <div class="message-header">
+              <p>报修说明</p>
+              <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+             需要修理多媒体的班级，请点击“报修”去填写相关信息。按记录时间先后修理。<strong>为快速解决问题，请如实记录</strong>,
+            </div>
+          </article>
+      </div>
+      <div class="container" style="padding-bottom: 10px;">
+        <article class="panel is-danger">
+          <p class="panel-heading">
+            我报修的
+          </p>
+          
+            <div  class="box">
+              {{if eq .count  1}}
+              <div class="field">
+                <label class="label">班级：{{.mylist.Nianji}}{{.mylist.Banji}}班</label>
+              </div>
+              <div class="field">
+                <label class="label">故障问题</label>
+                {{range  .mylist.Taglist}}
+              <span class="tag {{.Feature}}">
+                {{.Tagname}}
+              </span>
+                {{end}}
+                
+              </div>
+    
+              <div class="field">
+                <label class="label">报修时间：{{printf "%.19s" .mylist.Bx_time}}</label>
+              </div>
+              <div class="field">
+                <label class="label">联系电话：{{.mylist.Bx_tel}}</label>
+              </div>
+              
+              <div class="field">
+                <label class="label"><a  >编辑</a>  |<a>删除</a>| <a  href="/detail/{{.mylist.Id}}">详情</a></label>
+              </div>
+              {{else}}
+              <div class="field">
+                <label class="label">没有报修的</label>
+              </div>
+              {{end}}
+            </div>
+         
+        </article>
+      </div>
+      
+
+   
+   
+      <div class="container">
+        <article class="panel is-success">
+          <p class="panel-heading">
+            所有的报修
+          </p>
+          {{range .list}}
+          <div class="box">
+            <div class="field">
+              <label class="label">班级：{{.Nianji}}{{.Banji}}班</label>
+            </div>
+            <div class="field">
+              <label class="label">故障问题</label>
+              {{range .Taglist}}
+              <span class="tag {{.Feature}}">
+                {{.Tagname}}
+              </span>
+              {{end}}
+            </div>
+  
+            <div class="field">
+              <label class="label">报修时间：{{printf "%.19s" .Bx_time }}</label>
+            </div>
+            <div class="field">
+              <label class="label">联系电话：{{.Bx_tel}}</label>
+            </div>
+            <div class="field">
+              <label class="label"><a href="/detail/{{.Id}}">更多详细信息</a></label>
+            </div>
+    
+          </div>
+          {{end}}
+        <div class="box">
+          <div class="field">
+            <label class="label">helo</label>
+          </div>
+
+
+        </article>
+       
+
+        </div>
+      </div>
+      
+      
+      <br>
+      <footer class="footer"  >
+        <div class="content has-text-centered">
+          <p>
+            <strong>古中报修平台</strong> by <a href="#">Jack xu</a>.<br>
+            报修平台<a>管理</a>
+            <!-- <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>. -->
+          </p>
+        </div>
+      </footer>
+</body>
+</html>
+{{end}}

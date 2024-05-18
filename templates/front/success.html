@@ -1,0 +1,63 @@
+{{ define "front/success.html" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报修</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+          <h1 class="title">
+            古中多媒体报修平台
+          </h1>
+          <p class="subtitle"  style="padding-top: 20px;">
+              <strong>提交成功</strong>
+          </p>
+          
+        </div>
+      </section>
+    <div class="container">
+        <nav class="level is-mobile">
+            <p class="level-item has-text-centered">
+              <a class="link is-info" href="/">首页</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info"  href="/baoxiu">报修</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <img src="/static/pic/log.png" alt="" style="height: 30px;">
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info">已修好</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info">无法修复的</a>
+            </p>
+          </nav>
+    </div>
+    <div class="container">
+        <div class="box">
+            <p>成功</p>
+            <button class="button is-medium is-success">完成</button>
+        </div>
+        
+    </div>
+
+    <br>
+    <footer class="footer"  >
+      <div class="content has-text-centered">
+        <p>
+          <strong>古中报修平台</strong> by <a href="#">Jack xu</a>.<br>
+          报修平台<a>管理</a>
+          <!-- <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>. -->
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
+
+{{end}}

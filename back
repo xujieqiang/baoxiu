@@ -1,0 +1,60 @@
+<div class="container" style="padding-top: 20px;">
+        <!-- The magical tile element! -->
+        <div class="tile is-ancestor">
+          <div class="tile is-vertical is-12-mobile">
+            <div class="tile">
+              <div class="tile is-parent is-vertical">
+                <article class="tile is-child notification  ">
+                  <p class="title" style="padding-bottom: 10px;">班级：<span>初一 2 班</span></p>
+                  <p class="subtitle">故障问题：</p>
+                    <span class="tag is-primary">
+                    显示器问题
+                  </span>
+                  <span class="tag is-dark">
+                    操作系统问题
+                  </span>
+                  <span class="tag">
+                    投影问题
+                  </span>
+                  <span class="tag">
+                    电脑接口问题
+                  </span>
+                  <span class="tag">
+                    实物投影问题
+                  </span>
+                  <span class="tag">
+                    开机蓝屏
+                  </span>
+                  <p>&nbsp;</p>
+                
+                 
+                  <p class="subtitle">报修时间</p>
+                  <p class="subtitle">联系电话</p>
+                  <p><a href="/detail/11">更多详细信息：</a><a href="">more</a></p>
+                </article>
+                <article class="tile is-child notification is-warning">
+                  <p class="title">...tiles</p>
+                  <p class="subtitle">Bottom tile</p>
+                </article>
+                <article class="tile is-child notification is-warning">
+                  <p class="title">...tiles</p>
+                  <p class="subtitle">Bottom tile</p>
+                </article>
+                <article class="tile is-child notification is-warning">
+                  <p class="title">...tiles</p>
+                  <p class="subtitle">Bottom tile</p>
+                </article>
+              </div>
+              <!-- <div class="tile is-parent">
+                <article class="tile is-child notification is-info">
+                  <p class="title">Middle tile</p>
+                  <p class="subtitle">With an image</p>
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/640x480.png">
+                  </figure>
+                </article>
+              </div> -->
+            </div>
+        </div>
+      </div>
+      </div>

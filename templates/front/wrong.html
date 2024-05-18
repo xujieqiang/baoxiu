@@ -1,0 +1,159 @@
+{{ define "front/wrong.html" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报修</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+          <h1 class="title">
+            古中多媒体报修平台
+          </h1>
+          <p class="subtitle"  style="padding-top: 20px;">
+              <strong>报修多媒体</strong>
+          </p>
+          
+        </div>
+      </section>
+    <div class="container">
+        <nav class="level is-mobile">
+            <p class="level-item has-text-centered">
+              <a class="link is-info" href="/">首页</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info"  href="/baoxiu">报修</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <img src="/static/pic/log.png" alt="" style="height: 30px;">
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info">已修好</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info">无法修复的</a>
+            </p>
+          </nav>
+    </div>
+    <div class="container">
+        <form class="box" method="post" action="/bxpost">
+            <div class="field">
+              <label class="label">年级</label>
+              <div class="control">
+                <!-- <input class="input" type="email" placeholder="e.g. alex@example.com"> -->
+                <div class="select">
+                    <select name="nianji">
+                        <option value="" selected> 请选择年级</option>
+                        <option value="初一">初一</option>
+                        <option value="初二">初二</option>
+                        <option value="初三">初三</option>    
+                    </select>
+                </div>
+                
+              </div>
+            </div>
+          
+            <div class="field">
+              <label class="label">班级</label>
+              <div class="control">
+                <!-- <input class="input" type="password" placeholder="********"> -->
+                <div class="select">
+                    <select name="banji">
+                        <option value="" selected> 请选择班级</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option> 
+                        <option value="16">16</option>    
+                    </select>
+                </div>
+                
+              </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="field">
+                <label class="label">电脑的故障（从列表中选择相应的标签）</label>
+                <!-- <div class="">
+                    <div class="tag is-danger">
+                        <button class="delete"></button>
+                        显示的问题
+                    </div>
+                </div> -->
+                
+                
+                <div class="control">
+                  {{range .tags}}
+                    <label class="checkbox" style="padding-bottom: 10px;">
+                      {{.Id}} <input type="checkbox" name="choice[]" value="{{.Id}}"><span class="tag {{.Feature}} ">{{.Tagname}}</span>
+                    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    {{end}}
+                    <!-- <label class="checkbox"  style="padding-bottom: 10px;">
+                        <input type="checkbox" name="tags[]"><span class="tag is-warning is-medium">显示的问题</span>
+                    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="checkbox"  style="padding-bottom: 10px;">
+                        <input type="checkbox" name="tags[]"><span class="tag is-danger is-medium">操作系统的问题</span>
+                    </label> -->
+                    
+                    
+                </div>
+
+            </div>
+            <br>
+            <div class="field">
+                <label class="label">简单描述故障</label>
+                <div class="control">
+                    <textarea class="textarea"  name="descrip" placeholder="比如，电脑的在什么样的操作之下会发生故障，或者发生的频率，发生故障时的反馈" rows="4"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="field">
+                <label class="label">报修人</label>
+                <div class="control">
+                    <input class="input" type="text" name="teacher" placeholder="" >
+                </div>
+            </div>
+
+            <br>
+            <div class="field">
+                <label class="label">联系电话</label>
+                <div class="control">
+                    <input class="input" type="text" name="tel" placeholder="" >
+                </div>
+            </div>
+            <br>
+            <!-- <button class="button is-primary">Sign in</button> -->
+            <input type="submit" class="button is-primary" name="s1" value="报修" />
+          </form>
+    </div>
+
+    <br>
+    <footer class="footer"  >
+      <div class="content has-text-centered">
+        <p>
+          <strong>古中报修平台</strong> by <a href="#">Jack xu</a>.<br>
+          报修平台<a>管理</a>
+          <!-- <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>. -->
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
+
+{{end}}
